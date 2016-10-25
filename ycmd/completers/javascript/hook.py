@@ -23,12 +23,12 @@ from future import standard_library
 standard_library.install_aliases()
 from builtins import *  # noqa
 
-from ycmd.completers.javascript.tern_completer import (
-  ShouldEnableTernCompleter, TernCompleter )
+from ycmd.completers.javascript.flow_completer import (
+  ShouldEnableFlowCompleter, FlowCompleter )
 
 
 def GetCompleter( user_options ):
-  if not ShouldEnableTernCompleter():
+  if not ShouldEnableFlowCompleter():
     return None
 
-  return TernCompleter( user_options )
+  return FlowCompleter( user_options )
